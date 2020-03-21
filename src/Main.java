@@ -1,7 +1,16 @@
 import javafx.application.Application;
-import javafx.stage.Modality;
+import javafx.scene.Scene;
+import javafx.scene.control.Hyperlink;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
+import javafx.scene.control.Label;
+
+import java.awt.*;
+
 
 public class Main extends Application{
 
@@ -14,27 +23,25 @@ public class Main extends Application{
     @Override
     public void start(Stage stage) throws Exception {
 
-        stage.setTitle("a cool window");
+        stage.setTitle("Episdoe 4 - Stages");
+        stage.setWidth(500);
+        stage.setHeight(700);
+
+        VBox root = new VBox();
+
+        Hyperlink link = new Hyperlink("click me boy");
+
+        link.setOnAction(e -> {
+            System.out.println("thie link works");
+        });
+
+        root.getChildren().addAll(link);
+
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+
+
         stage.show();
-
-        Stage stage2 = new Stage();
-        stage2.setTitle("Second window");
-        stage2.setWidth(400);
-        stage2.setHeight(300);
-
-        stage2.setX(50);
-        stage2.setY(100);
-        stage2.show();
-
-        Stage newWindow = new Stage();
-        newWindow.initStyle(StageStyle.UNDECORATED);
-
-        //Modality
-        newWindow.initModality(Modality.WINDOW_MODAL);
-        newWindow.initOwner(stage2);
-
-        newWindow.show();
-
     }
 
     @Override
