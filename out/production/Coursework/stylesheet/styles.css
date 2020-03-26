@@ -1,0 +1,10 @@
+.root {
+    -fx-background-color: #6cfc88;
+    -fx-font-family: Amiri;
+    -fx-font-size: 25px;
+
+}
+
+.label {
+    -fx-background-color: crimson;
+}
